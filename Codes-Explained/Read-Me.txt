@@ -1,0 +1,14 @@
+1. "dataProcessing_COPDGene_Meff_explained.R" -- explains the processing of the metabolites and subjects meta-data to prepare it for the downstream analysis
+
+2. "compute-Meffs-explained.R" -- explains the computation of M-eff's for all the 7 methods under comparison, for sub-sample size "nsub" and "REP" repetitions of random data sub-sampling, for all three metabolite groupings.
+	-- uses the "Meff_sp.R" function to compute the Meff's based on Spearman correlation matrix. This function is based on the original "fn_Meff.R" code in Peluso et al. (2021) - https://github.com/AlinaPeluso/PhenoMeNal/tree/master/MWSL/R  
+
+3. "Meffs-resultsSummary-explained.R" -- explains how the Meff results are summarized with median Meffs and root mean-squared errors.
+	-- uses the function "rmse.R" to compute the root mean-squared errors.
+
+4. "perm-based-gold-standard-parComp-part.R" -- explains the computation of permutation-based gold-standard Meff's.
+	-- uses the function "FWERperm2.R", our proposed reproducible version of the original function "fn_FWERperm.R" in Peluso et al. (2021) - https://github.com/AlinaPeluso/PhenoMeNal/tree/master/MWSL/R
+
+5. "COPDGene_dcorr_logfeatures_p_nsub_logFEVrat_REP.m" (MATLAB function) -- explains the computation of the distance correlation (DisCo) matrices for sub-sample size "nsub" and "REP" repetitions of random data sub-sampling (same ones used for computing PrsCo matrices), for all three metabolite groupings.
+ 	-- uses the function "fastDcov.m" and "fastDcorr.m" to compute DisCo in a computaionally efficient way proposed by Chaudhuri & Hu (2019).
+	-- used the functionn "nearestSPD.m", available in MATLAB (2021), to  convert the estimated negative semi-definite DisCo matrices to their closest positive semi-definite forms.
